@@ -35,7 +35,9 @@ class Catalog extends Model {
         Catalog::observe(new UserActionsObserver);
     }
     
-    
+    public function products(){
+		return $this->hasMany(\App\Product::class,'catalog_id');
+	}
     
     
 }

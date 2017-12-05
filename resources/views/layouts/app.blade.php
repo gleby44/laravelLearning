@@ -32,6 +32,11 @@
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
+				<div class="menu">
+					@foreach($catalogs as $cat)
+						<a href="{{asset('catalog/'.$cat->id)}}">{{$cat->name}}</a>
+					@endforeach
+				</div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
@@ -72,8 +77,9 @@
         </nav>
 
         @yield('content')
+		
     </div>
-
+		
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

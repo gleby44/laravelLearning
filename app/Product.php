@@ -42,8 +42,9 @@ class Product extends Model {
     
     public function catalog()
     {
-        return $this->hasOne('App\Catalog', 'id', 'catalog_id');
+        return $this->belongsTo('App\Catalog'::class, 'catalog_id');
     }
+	
 
 
     
