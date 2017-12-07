@@ -11,3 +11,5 @@ Route::get('/products','ProductController@getAll');
 Route::get('/catalog/{id}','ProductController@getCat');
 
 Route::get('/product/{id}','ProductController@getOne');
+
+Route::post('home','HomeController@postIndex');
