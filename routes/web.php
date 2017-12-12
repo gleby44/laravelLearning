@@ -13,3 +13,7 @@ Route::get('/catalog/{id}','ProductController@getCat');
 Route::get('/product/{id}','ProductController@getOne');
 
 Route::post('home','HomeController@postIndex');
+
+Route::group(['middleware'=>['admin']],function(){
+	Route::get('admin/index','AdminController@getIndex');
+});

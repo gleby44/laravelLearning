@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1111</title>
+
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	<ul>
+		<li><a class="link" href="localhost.html">localhost</a></li>
+		<li><a class="link" href="localhost2.html">localhost2</a></li>
+		<li><a class="link" href="localhost3.html">localhost3</a></li>
+	</ul>
+	<script>
+		document.onload=function(){
+			var elements=getElementsByClassName('link');
+			for(var i=0;i<elements.lenght;i++){
+				var bufattr=elements[i].getAttribute('href');
+				if(location.href.indexOf(bufattr)!=-1){
+					var buftext=elements[i].innerText;
+					var parent=elements[i].parentNode;
+					parent.innerHTML='<p>'+buftext+'</p>'
+					
+				}
+			}
+		}
+	</script>
+  </body>
+</html>
